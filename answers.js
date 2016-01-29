@@ -41,10 +41,34 @@ function longestWord(string) {
 
 console.log(longestWord("find the longest word"))
 
+// exercise 5 - Write a function called countVowels that takes a string and returns the number of vowels in the string.
+
+var vowels = ["a", "e", "i" , "o" , "u"];
+
+function countVowels(string) {
+    var splitString = string.split("");
+    var v_count = 1;
+
+    return splitString.reduce(function(a,b) { //a represents the object, b represents the letters in the sentence
+        if (vowels.indexOf(b) > -1) {
+            a.count = v_count;
+            v_count++;
+        } else if(!a.count){
+            a.count = 0;
+        }
+        return a;
+        
+    },{});
+}
+      
+console.log(countVowels("find all the vowels in this sentence - should be 13"));
 
 
 
 
+
+
+/*
 
 function longestWord(string) {
     var longStr = string.split(" ");
@@ -58,3 +82,6 @@ function longestWord(string) {
     };
 
 console.log(longestWord("find the longest word"))
+
+*/
+
