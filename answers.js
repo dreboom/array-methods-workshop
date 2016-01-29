@@ -27,3 +27,34 @@ var q3 = function(array, funNum) {
 }
 
 console.log(q3(numbers, fun));
+
+// exercise 4 - Write a function called longestWord that takes a string as argument, and returns the longest word in the string.
+
+function longestWord(string) {
+    var longStr = string.split(" ");
+    return longStr.reduce(function(a, b){
+        if( a.length>b.length){
+            return a
+        } else return b
+    })
+    };
+
+console.log(longestWord("find the longest word"))
+
+
+
+
+
+
+function longestWord(string) {
+    var longStr = string.split(" ");
+    var counter = 0;
+    return longStr.reduce(function(a, b) {
+        
+        a[b] = counter++;
+    
+        return a
+    },{})
+    };
+
+console.log(longestWord("find the longest word"))
