@@ -64,8 +64,34 @@ function countVowels(string) {
 console.log(countVowels("find all the vowels in this sentence - should be 13"));
 
 
+// exercise 6 - Write a function called highLow that takes an array of numbers, and returns an object with a property highest containing the highest number, and a property lowest containing the lowest number, using Array.prototype.reduce.
+
+var moreNumbers = [1, 4, -3, 12, 300];
+
+var seperatedNumbers = {
+    highest: -Infinity,
+    lowest: Infinity
+};
 
 
+function highLow(arr) {
+    var someCode = arr.reduce(function(a, b) {
+        if (a.lowest > b) {
+            a.lowest = b;
+        }
+
+        if (a.highest < b) {
+            a.highest = b;
+        }
+
+        return a;
+    }, seperatedNumbers);
+
+    return someCode;
+}
+
+
+console.log(highLow(moreNumbers))
 
 
 /*
