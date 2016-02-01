@@ -94,6 +94,41 @@ function highLow(arr) {
 console.log(highLow(moreNumbers))
 
 
+
+// exercise 7 - Expanding on exercise 6, write a function called highLowTwo that takes an array of numbers, and returns the higest, second highest, lowest, and second lowest numbers
+
+var moreNumbers2 = [1, 4, -3, 12, 300];
+
+var seperatedNumbers2 = {
+    highest: -Infinity,
+    secondHighest: -Infinity,
+    lowest: Infinity,
+    secondLowest: Infinity
+};
+
+
+function highLowTwo(arr) {
+    var someCode2 = arr.reduce(function(a, b) {
+        if (a.lowest > b) {
+            a.secondLowest = a.lowest;
+            a.lowest = b;
+        }
+
+        if (a.highest < b) {
+            a.secondHighest = a.highest;
+            a.highest = b;
+        }
+        
+        return a;
+    }, seperatedNumbers2);
+
+    return someCode2;
+}
+
+
+console.log(highLowTwo(moreNumbers2))
+
+
 /*
 
 function longestWord(string) {
